@@ -3,7 +3,7 @@ import './App.css'
 
 function ChatInput({ chatMessages , setChatMessages }){          //PascalCase
 
-        const [inputText , setInputText] = React.useState('');
+        const [inputText , setInputText] = useState('');
 
         function saveInputText(event){
             setInputText(event.target.value);
