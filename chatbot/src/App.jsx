@@ -1,4 +1,7 @@
-import { useState } from 'react'
+import { useState , useRef , useEffect} from 'react'
+import {Chatbot} from 'supersimpledev'
+import RobotProfileImage from './assets/robot.png';
+import UserProfileImage from './assets/profile.png';
 import './App.css'
 
 function ChatInput({ chatMessages , setChatMessages }){          //PascalCase
@@ -80,7 +83,7 @@ function ChatInput({ chatMessages , setChatMessages }){          //PascalCase
                     : "chat-message-robot"
                 }>
                     {sender === "robot" && (
-                        <img src = "robot.png" 
+                        <img src = {RobotProfileImage} 
                         className = "chat-message-profile"
                         />
                     )}
@@ -88,7 +91,7 @@ function ChatInput({ chatMessages , setChatMessages }){          //PascalCase
                         {message}
                     </div>
                     {sender === "user" && (
-                        <img src = "profile.png" 
+                        <img src = {UserProfileImage} 
                         className = "chat-message-profile"
                         />
                     )}
@@ -98,9 +101,9 @@ function ChatInput({ chatMessages , setChatMessages }){          //PascalCase
 
         function ChatMessages({ chatMessages }){
 
-            const chatMessagesRef = React.useRef(null);
+            const chatMessagesRef = useRef(null);
 
-            React.useEffect(() => {
+            useEffect(() => {
                 // console.log("updated");
                 const containerElem = chatMessagesRef.current;
                 if(containerElem){
