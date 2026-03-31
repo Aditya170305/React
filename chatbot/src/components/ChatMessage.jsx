@@ -1,5 +1,5 @@
 import RobotProfileImage from '../assets/robot.png';
-import UserProfileImage from '../assets/profile.png';
+import UserProfileImage from '../assets/profile-1.jpg';
 import './ChatMessage.css';
 
 export function ChatMessage({message , sender}){              //PascalCase
